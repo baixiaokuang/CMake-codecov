@@ -160,3 +160,5 @@ function (add_gcov_target TNAME)
 	# add evaluation target to the global gcov target.
 	add_dependencies(gcov ${TNAME}-gcov)
 endfunction (add_gcov_target)
+
+find_package_handle_standard_args(Gcov DEFAULT_MSG)

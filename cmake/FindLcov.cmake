@@ -19,7 +19,7 @@ set(LCOV_HTML_PATH "${CMAKE_BINARY_DIR}/lcov/html")
 
 
 # Search for Gcov which is used by Lcov.
-find_package(Gcov)
+find_package(Gcov REQUIRED)
 
 
 

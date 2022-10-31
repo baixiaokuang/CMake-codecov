@@ -61,9 +61,9 @@ endfunction ()
 # Exit this module, if coverage is disabled. add_coverage is defined before this
 # return, so this module can be exited now safely without breaking any build-
 # scripts.
-if (NOT ENABLE_COVERAGE)
-	return()
-endif ()
+# if (NOT ENABLE_COVERAGE)
+# 	return()
+# endif ()
 
 
 
@@ -272,5 +272,8 @@ endfunction(add_coverage_target)
 
 # Include modules for parsing the collected data and output it in a readable
 # format (like gcov and lcov).
-find_package(Gcov)
-find_package(Lcov)
+find_package(Gcov REQUIRED)
+find_package(Lcov REQUIRED)
+
+find_package_handle_standard_args(codecov DEFAULT_MSG Gcov_FOUND Lcov_FOUND)
+
